@@ -1,5 +1,5 @@
 module Shore
-  module PdfTool
+  module PdfTool # :nodoc:
     VERSION = '0.1.0'
   end
 end
