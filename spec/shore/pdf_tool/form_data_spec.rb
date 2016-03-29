@@ -3,30 +3,30 @@ RSpec.describe Shore::PdfTool::FormData do
   let(:fdf) { PdfForms::Fdf.new(hash).to_pdf_data }
   let(:xfdf) { PdfForms::XFdf.new(hash).to_pdf_data }
   let(:output) { '/tmp/output.fdf' }
-  subject { described_class.new(hash, options) }
+  subject { described_class.new(hash, format) }
 
   context '.as_format' do
     context ':fdf' do
-      let(:options) { :fdf }
+      let(:format) { :fdf }
 
       it 'works' do
-        expect(subject.as_format(options)).to eq(fdf)
+        expect(subject.as_format).to eq(fdf)
       end
     end
 
     context ':xfdf' do
-      let(:options) { :xfdf }
+      let(:format) { :xfdf }
 
       it 'works' do
-        expect(subject.as_format(options)).to eq(xfdf)
+        expect(subject.as_format).to eq(xfdf)
       end
     end
 
     context 'with invalid format' do
-      let(:options) { :pdf }
+      let(:format) { :pdf }
 
       it 'raise error' do
-        expect { subject.as_format(options) }
+        expect { subject.as_format }
           .to raise_error(Shore::PdfTool::FormData::UnsupportedFormFormat)
       end
     end
@@ -38,28 +38,28 @@ RSpec.describe Shore::PdfTool::FormData do
     end
 
     context 'with :fdf format' do
-      let(:options) { :fdf }
+      let(:format) { :fdf }
 
       it 'created a form file' do
-        subject.to_file(output, options)
+        subject.to_file(output)
         expect(File.file?(output)).to be_truthy
       end
     end
 
     context 'with :xfdf format' do
-      let(:options) { :xfdf }
+      let(:format) { :xfdf }
 
       it 'created a form file' do
-        subject.to_file(output, options)
+        subject.to_file(output)
         expect(File.file?(output)).to be_truthy
       end
     end
 
     context 'with invalid format' do
-      let(:options) { :pdf }
+      let(:format) { :pdf }
 
       it 'created a form file' do
-        expect { subject.to_file(output, options) }
+        expect { subject.to_file(output) }
           .to raise_error(Shore::PdfTool::FormData::UnsupportedFormFormat)
       end
     end
