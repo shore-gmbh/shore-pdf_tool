@@ -6,6 +6,5 @@ module Shore
   module PdfTool # :nodoc:
     class InvalidFileFormat < StandardError
     end
-    # Your code goes here...
   end
 end

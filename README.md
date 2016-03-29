@@ -5,6 +5,8 @@ Shore PdfTool for manipulating pdf files.
 
 ## Installation
 
+Install [pdftk-server](https://www.pdflabs.com/tools/pdftk-server/). If you are on ElCapitan use [this one](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/pdftk_server-2.02-mac_osx-10.11-setup.pkg).
+
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -21,6 +23,10 @@ Or install it yourself as:
 
 
 ## Usage
+
+Create an `config/initializers/shore-pdf_tool.rb` in your application and require [`pdftk-heroku`](https://github.com/ChromeCapital/pdftk-heroku). This will add pdftk binary and library file for Heroku Cedar 14 stack.
+
+    require 'pdftk-heroku'
 
 Create pdf file from template and pre-fill form fields with data
 

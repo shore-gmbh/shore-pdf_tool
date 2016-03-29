@@ -1,5 +1,4 @@
 require 'pdf-forms'
-# require 'pdftk-heroku'
 
 module Shore
   module PdfTool
@@ -13,7 +12,7 @@ module Shore
           data_format: 'Fdf'
         }
         config = default_options.merge(options)
-        @pdftk = PdfForms.new('/usr/local/bin/pdftk', config)
+        @pdftk = PdfForms.new('pdftk', config)
       end
 
       def fill(output, hash)
