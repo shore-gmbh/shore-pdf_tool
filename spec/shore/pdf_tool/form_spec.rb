@@ -3,19 +3,10 @@ RSpec.describe Shore::PdfTool::Form do
   let(:invalid_file) { File.open('spec/test_files/pdf-plain.pdf') }
   let(:hash) { { first_name: 'Bob' } }
   let(:output) { '/tmp/test_output.pdf' }
+  let(:file) { valid_file }
   subject { described_class.new(file) }
 
-  context 'with valid file' do
-    let(:file) { valid_file }
-
-    it 'is valid' do
-      expect(subject.valid?).to be_truthy
-    end
-
-    it 'returns fields' do
-      expect(subject.fields(file)).not_to be_empty
-    end
-
+  context '.fill' do
     after do
       FileUtils.rm(output) if File.exist?(output)
     end
@@ -27,15 +18,27 @@ RSpec.describe Shore::PdfTool::Form do
     end
   end
 
-  context 'with invalid file' do
-    let(:file) { invalid_file }
-
-    it 'is invalid' do
-      expect(subject.valid?).to be_falsey
+  context '.field_names' do
+    it 'returns fields' do
+      expect(subject.field_names).not_to be_empty
     end
+  end
 
+  context '.fields' do
     it 'returns empty fields' do
-      expect(subject.fields(file)).to be_empty
+      expect(subject.fields).to_not be_empty
+    end
+  end
+
+  context '.field' do
+    it 'returns empty fields' do
+      expect(subject.field(:first_name)).to be_nil
+    end
+  end
+
+  context '.valid?' do
+    it 'is valid' do
+      expect(subject.valid?).to be_truthy
     end
   end
 end
