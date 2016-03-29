@@ -22,7 +22,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create pdf file from template and pre-fill form fields with data
+
+    template_pdf = '/path/to/file.pdf'
+    output = '/path/to/output.pdf'
+    hash = { first_name: 'Bob' }
+    pdf_form = Shore::PdfTool::Form.new(template_pdf)
+    pdf_form.fill(output, hash)
+
+Get pdf template file form fields
+
+    pdf_form = Shore::PdfTool::Form.new(template_pdf)
+    pdf_form.fields
+
+Check specified template file has valid pdf form
+
+    pdf_form = Shore::PdfTool::Form.new(template_pdf)
+    pdf_form.valid?
 
 ## Development
 

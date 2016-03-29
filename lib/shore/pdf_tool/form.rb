@@ -20,12 +20,14 @@ module Shore
         pdftk.fill_form(template, output, hash)
       end
 
-      def field_names(file)
-        pdftk.get_field_names(file)
+      def field_names(file = nil)
+        file_name = file || template
+        pdftk.get_field_names(file_name)
       end
 
-      def fields(file)
-        pdftk.get_fields(file)
+      def fields(file = nil)
+        file_name = file || template
+        pdftk.get_fields(file_name)
       end
 
       def field(field_name, file = nil)
