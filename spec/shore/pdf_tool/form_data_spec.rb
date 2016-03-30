@@ -3,15 +3,12 @@ RSpec.describe Shore::PdfTool::FormData do
   let(:fdf) { PdfForms::Fdf.new(hash).to_pdf_data }
   let(:xfdf) { PdfForms::XFdf.new(hash).to_pdf_data }
   let(:output) { '/tmp/output.fdf' }
+  let(:format) { :fdf }
   subject { described_class.new(hash, format) }
 
   context '.as_format' do
-    context ':fdf' do
-      let(:format) { :fdf }
-
-      it 'works' do
-        expect(subject.as_format).to eq(fdf)
-      end
+    it 'works' do
+      expect(subject.as_format).to eq(fdf)
     end
 
     context ':xfdf' do
@@ -37,13 +34,9 @@ RSpec.describe Shore::PdfTool::FormData do
       FileUtils.rm(output) if File.exist?(output)
     end
 
-    context 'with :fdf format' do
-      let(:format) { :fdf }
-
-      it 'created a form file' do
-        subject.to_file(output)
-        expect(File.file?(output)).to be_truthy
-      end
+    it 'created a form file' do
+      subject.to_file(output)
+      expect(File.file?(output)).to be_truthy
     end
 
     context 'with :xfdf format' do
