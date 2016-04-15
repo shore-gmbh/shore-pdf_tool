@@ -2,8 +2,8 @@
 
 Shore PdfTool for manipulating pdf files.
 
-[![Code Climate](https://codeclimate.com/repos/56fa8eaae886ea0ea500269c/badges/92dfc43120880da52611/gpa.svg)](https://codeclimate.com/repos/56fa8eaae886ea0ea500269c/feed)
-[![Test Coverage](https://codeclimate.com/repos/56fa8eaae886ea0ea500269c/badges/92dfc43120880da52611/coverage.svg)](https://codeclimate.com/repos/56fa8eaae886ea0ea500269c/coverage)
+[![Code Climate](https://codeclimate.com/repos/571110ba246041603e0063c2/badges/b09ca379db039d0b7f80/gpa.svg)](https://codeclimate.com/repos/571110ba246041603e0063c2/feed)
+[![Test Coverage](https://codeclimate.com/repos/571110ba246041603e0063c2/badges/b09ca379db039d0b7f80/coverage.svg)](https://codeclimate.com/repos/571110ba246041603e0063c2/coverage)
 
 
 ## Installation
