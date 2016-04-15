@@ -1,9 +1,5 @@
-if ENV['COVERAGE']
-  require 'simplecov'
-  SimpleCov.start do
-    add_filter 'spec'
-  end
-end
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'shore/pdf_tool'

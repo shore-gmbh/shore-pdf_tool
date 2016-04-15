@@ -60,10 +60,6 @@ Run tests
 
     $ bin/rspec
 
-To generate SimpleCov stats by run
-
-    $ COVERAGE=true bin/rspec
-
 For REPL you can use
 
     $ bin/console
