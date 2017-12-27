@@ -4,7 +4,6 @@ PATH
     shore-pdf_tool (0.1.0)
       activesupport (>= 3)
       pdf-forms (~> 1.0)
-      pdftk-heroku (~> 0.0.4)
 
 GEM
   remote: https://rubygems.org/
@@ -41,7 +40,6 @@ GEM
     pdf-forms (1.0.0)
       cliver (~> 0.3.2)
       safe_shell (>= 1.0.3, < 2.0)
-    pdftk-heroku (0.0.4)
     powerpack (0.1.1)
     pry (0.10.3)
       coderay (~> 1.1.0)

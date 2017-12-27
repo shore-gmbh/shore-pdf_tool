@@ -42,8 +42,6 @@ module Shore
 
       private
 
-      # Require pdftk-heroku to include pdftk binary into PATH
-      # Install locally from https://www.pdflabs.com/tools/pdftk-server/
       def pdftk_binary
         'pdftk'
       end
