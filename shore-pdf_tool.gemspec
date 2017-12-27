@@ -32,7 +32,6 @@ gem pushes.'
 
   spec.add_runtime_dependency 'activesupport', '>= 3'
   spec.add_runtime_dependency 'pdf-forms', '~> 1.0'
-  spec.add_runtime_dependency 'pdftk-heroku', '~> 0.0.4'
 
   spec.add_development_dependency 'bundler', '~> 1.10'
   spec.add_development_dependency 'rake', '~> 10.0'
